@@ -1,3 +1,5 @@
 *.py[cod]
-redes_venv/
+venv_met/
 networks/static/
+.gitignore
+

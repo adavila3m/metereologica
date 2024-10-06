@@ -25,7 +25,7 @@ SECRET_KEY = '4%dd=1-zn!r6byh^5h92j4f60(+xgqrf7pwif1s1m@w@3%y#0^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.89',]
+ALLOWED_HOSTS = ['localhost','192.168.0.89',]
 
 
 # Application definition
@@ -75,10 +75,10 @@ WSGI_APPLICATION = 'networks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'redes',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ifts24',
         'HOST': 'localhost',
-        'USER': 'root',
+        'USER': 'ifts',
         'PASSWORD':'Sistemas1',
         'PORT':'3306',
     }
