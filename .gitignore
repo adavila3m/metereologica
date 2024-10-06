@@ -1,0 +1,3 @@
+*.py[cod]
+redes_venv/
+networks/static/

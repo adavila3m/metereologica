@@ -1,0 +1,1 @@
+#Autogestion de switches
