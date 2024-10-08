@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from autogestion.views import SensorDataView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login),
     path('inicio/', views.info),
+    path('api/sensor-data/', SensorDataView.as_view(), name='sensor_data'),
+    
 ]
