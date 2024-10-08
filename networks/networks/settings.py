@@ -25,7 +25,7 @@ SECRET_KEY = '4%dd=1-zn!r6byh^5h92j4f60(+xgqrf7pwif1s1m@w@3%y#0^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','192.168.0.89',]
+ALLOWED_HOSTS = ['localhost','adavila33.ddns.net','192.168.0.89',]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'autogestion',
 ]
 
 MIDDLEWARE = [
