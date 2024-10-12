@@ -1,0 +1,89 @@
+{%extends "base.html"%}
+
+{%block contenido%}
+<a href="/dashboard"> <span class="badge">Volver</span> </a>
+    <div class="templatemo-flex-row flex-content-row">
+        <div class="templatemo-content-widget white-bg col-2">
+        <i class="fa fa-times"></i>
+        <div class="media margin-bottom-30">
+            
+            <div class="media-body">
+            <h2 class="media-heading text-uppercase blue-text"> IFTS-24</h2>
+            <p>Mediciones</p>
+            </div>        
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+            
+            
+            <tbody>
+                <tr align="left">
+                <td>
+                    <div></div>
+                </td>
+                <td>
+                    <div class="col-lg-12 has-warning form-group">                  
+                    <label class="control-label" for="inputWithWarning">Fecha</label>                                                 
+                    </div>
+                </td>
+                <td>
+                    <div class="col-lg-12 has-warning form-group">                  
+                    <label class="control-label" for="inputWithWarning">Temperatura</label>                                                 
+                    </div>
+                </td>
+                <td>
+                    <div class="col-lg-12 has-warning form-group">                  
+                    <label class="control-label" for="inputWithWarning">Humedad</label>                                                 
+                    </div>
+                </td>
+                <td>
+                    <div class="col-lg-12 has-warning form-group">                  
+                    <label class="control-label" for="inputWithWarning">Presion</label>                                                 
+                    </div>
+                </td>
+                <td>
+                    <div class="col-lg-12 has-warning form-group">                  
+                    <label class="control-label" for="inputWithWarning">Nivel sonido</label>                                                 
+                    </div>
+                </td>
+                                    
+                </tr> 
+                {%for medicion in mediciones%}
+                <tr align="left">
+                <td><div class="circle blue-bg"></div></td>
+                <td>{{medicion.fecha}}</td>
+                <td>{{medicion.temperatura}}</td>
+                <td>{{medicion.humedad}}</td>
+                <td>{{medicion.presion}}</td>
+                <td>{{medicion.nivel_sonido}}</td>                    
+                </tr>  
+                {%endfor%}
+
+                                                            
+            </tbody>
+            </table>
+        </div>             
+        </div>
+
+        <div class="templatemo-content-widget white-bg col-1 text-center templatemo-position-relative">
+        <i class="fa fa-times"></i>
+        
+        <h2 class="text-uppercase blue-text margin-bottom-5"></h2>
+        <h3 class="text-uppercase margin-bottom-70"> </h3>
+        <div class="templatemo-social-icons-container">
+            <div class="social-icon-wrap">
+            <i class="fa fa-facebook templatemo-social-icon"></i>  
+            </div>
+            <div class="social-icon-wrap">
+            <i class="fa fa-twitter templatemo-social-icon"></i>  
+            </div>
+            <div class="social-icon-wrap">
+            <i class="fa fa-google-plus templatemo-social-icon"></i>  
+            </div>                
+        </div>
+        </div>
+        
+    </div>
+
+
+{%endblock%}

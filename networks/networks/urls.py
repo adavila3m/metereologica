@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login),
     path('inicio/', views.info),
+    path('dashboard/', views.dashboard),
+    path('mediciones/', views.mediciones),
     path('api/sensor-data/', SensorDataView.as_view(), name='sensor_data'),
     
 ]

@@ -48,7 +48,7 @@
           </div>
         <nav class="templatemo-left-nav">          
           <ul>
-            <li><a href="base.html"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
+            <li><a href="/dashboard"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
             <li><a href="#"><i class="fa fa-bar-chart fa-fw"></i>Opcion 2</a></li>
             <li><a href="#" class="active"><i class="fa fa-database fa-fw"></i>Opcion 3</a></li>
             <li><a href="#"><i class="fa fa-map-marker fa-fw"></i>Opcion 4</a></li>
@@ -78,157 +78,37 @@
             
             <div class="panel panel-default no-border">
               <div class="panel-heading border-radius-10">
-                <h2>Sitios</h2>
+                <h2>{{titulo}}</h2>
               </div>
               <div class="panel-body">
                 <div class="templatemo-flex-row flex-content-row margin-bottom-30">
                   <div class="col-1">
+                    <!--Bloque de contenido-->
                     {%block contenido%}
-                    <div class="panel panel-default table-responsive">  
-                      <table class="table table-striped table-bordered templatemo-user-table">
-                        <thead>
-                          <tr>
-                            <td><a href="" class="white-text templatemo-sort-by"># <span class="caret"></span></a></td>
-                            <td><a href="" class="white-text templatemo-sort-by"> Institucion <span class="caret"></span></a></td>
-                            <td><a href="" class="white-text templatemo-sort-by"> Direccion <span class="caret"></span></a></td>
-                            <td><a href="" class="white-text templatemo-sort-by">Email <span class="caret"></span></a></td>
-                            <td>Mediciones</td>
-                            
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1.</td>
-                            <td>IFTS 24</td>
-                            <td>Av. Entre Ríos 757</td>
-                            <td>@jS</td>
-                            <td><a href="" ><img src="/assets/images/medicion.png" width="30px"></a></td>                          
-                          </tr>
-                          <tr>
-                            <td>2.</td>
-                            <td>IFTS 11</td>
-                            <td>Zavaleta 204</td>
-                            <td>@bJ</td>
-                            <td><a href="" ><img src="/assets/images/medicion.png" width="30px"></a></td>
-                            
-                          </tr>
-                                  
-                        </tbody>
-                      </table> 
-                    </div>   
+                    
 
                     {%endblock%}
 
-                    {%block mediciones%}
+                    <!--Fin de bloque contenido-->
 
-                    <div class="templatemo-flex-row flex-content-row">
-                      <div class="templatemo-content-widget white-bg col-2">
-                        <i class="fa fa-times"></i>
-                        <div class="media margin-bottom-30">
-                          
-                          <div class="media-body">
-                            <h2 class="media-heading text-uppercase blue-text"> IFTS-24</h2>
-                            <p>Mediciones</p>
-                          </div>        
-                        </div>
-                        <div class="table-responsive">
-                          <table class="table">
-                            
-                            
-                            <tbody>
-                              <tr align="left">
-                                <td>
-                                  <div></div>
-                                </td>
-                                <td>
-                                  <div class="col-lg-12 has-warning form-group">                  
-                                    <label class="control-label" for="inputWithWarning">Fecha</label>                                                 
-                                  </div>
-                                </td>
-                                <td>
-                                  <div class="col-lg-12 has-warning form-group">                  
-                                    <label class="control-label" for="inputWithWarning">Temperatura</label>                                                 
-                                  </div>
-                                </td>
-                                <td>
-                                  <div class="col-lg-12 has-warning form-group">                  
-                                    <label class="control-label" for="inputWithWarning">Humedad</label>                                                 
-                                  </div>
-                                </td>
-                                <td>
-                                  <div class="col-lg-12 has-warning form-group">                  
-                                    <label class="control-label" for="inputWithWarning">Presion</label>                                                 
-                                  </div>
-                                </td>
-                                <td>
-                                  <div class="col-lg-12 has-warning form-group">                  
-                                    <label class="control-label" for="inputWithWarning">Nivel sonido</label>                                                 
-                                  </div>
-                                </td>
-                                                    
-                              </tr> 
-                              <tr align="left">
-                                <td><div class="circle blue-bg"></div></td>
-                                <td>Task Pending</td>
-                                <td>Task Pending</td>
-                                <td>22</td>
-                                <td>22</td>
-                                <td>22</td>                    
-                              </tr>  
-
-                              <tr align="left">
-                                <td><div class="circle blue-bg"></div></td>
-                                <td>Task Pending</td>
-                                <td>Task Pending</td>
-                                <td>22</td>
-                                <td>22</td>
-                                <td>22</td>                    
-                              </tr>  
-                                                           
-                            </tbody>
-                          </table>
-                        </div>             
-                      </div>
-
-                      <div class="templatemo-content-widget white-bg col-1 text-center templatemo-position-relative">
-                        <i class="fa fa-times"></i>
-                        
-                        <h2 class="text-uppercase blue-text margin-bottom-5"></h2>
-                        <h3 class="text-uppercase margin-bottom-70"> </h3>
-                        <div class="templatemo-social-icons-container">
-                          <div class="social-icon-wrap">
-                            <i class="fa fa-facebook templatemo-social-icon"></i>  
-                          </div>
-                          <div class="social-icon-wrap">
-                            <i class="fa fa-twitter templatemo-social-icon"></i>  
-                          </div>
-                          <div class="social-icon-wrap">
-                            <i class="fa fa-google-plus templatemo-social-icon"></i>  
-                          </div>                
-                        </div>
-                      </div>
-                      
-                    </div>
-
-                    {%endblock%}
-
-                    <h3 class="text-center margin-bottom-5">Computer Resources</h3>
-                    <p class="text-center">Curabitur</p>              
-                  </div>              
+                    <h3 class="text-center margin-bottom-5">---</h3>
+                    <p class="text-center">---</p>   
+                  </div>             
+                               
                 </div>     
               </div>
             </div>            
-            
-            
+                       
           </div>
           <footer class="text-right">
             <p>Copyright &copy; 2024 IFTS 24 
             |</p>
           </footer>         
         </div>
+
       </div>
     </div>
-    
+  
     <!-- JS -->
     <script type="text/javascript" src="/assets/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
     <script type="text/javascript" src="/assets/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
