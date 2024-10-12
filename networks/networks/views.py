@@ -6,4 +6,4 @@ def login(request):
 
 def info(request):
 	'''Funcion principal'''
-	return render(request,"base-met.html")
+	return render(request,"base.html")
