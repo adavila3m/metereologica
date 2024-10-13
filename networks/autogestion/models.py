@@ -11,7 +11,7 @@ class medicion(models.Model):
     
 
     def __str__(self):
-        return f"Fecha:"
+        return f"Fecha:{self.fecha}, Temperatura: {self.temperatura}"
 
 class sitio(models.Model):
     nombre = models.CharField(max_length=50,)

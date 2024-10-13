@@ -1,3 +1,7 @@
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+
 from django.shortcuts import HttpResponse, render 
 from autogestion.models import sitio, medicion
 
@@ -26,6 +30,7 @@ def dashboard(request, template_name= None):
 def mediciones(request, template_name= None):
 	#consultar sitios
 	a = sitio.objects.get(id=1)
+	
 	mediciones = a.mediciones.all().order_by('-fecha')
 	
 	return render(	request,
@@ -35,3 +40,17 @@ def mediciones(request, template_name= None):
 					},
 							
 	)
+
+@api_view(['POST'])
+def recibir_datos(request):
+	dato = request.data
+	inst = sitio.objects.get(nombre="IFTS 24")
+
+	if dato:
+		# Guardar el dato en la base de datos
+		med = medicion.objects.create(**dato)
+		inst.mediciones.add(med)
+		inst.save()
+		
+		return Response({"message": "Dato recibido correctamente"}, status=status.HTTP_201_CREATED)
+	return Response({"error": "Dato no proporcionado"}, status=status.HTTP_400_BAD_REQUEST)
