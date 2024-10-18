@@ -8,7 +8,7 @@
         <div class="media margin-bottom-30">
             
             <div class="media-body">
-            <h2 class="media-heading text-uppercase blue-text"> IFTS-24</h2>
+            <h2 class="media-heading blue-text"> Nodo: {{ nodo }}</h2>
             <p>Mediciones</p>
             </div>        
         </div>
@@ -28,34 +28,40 @@
                 </td>
                 <td>
                     <div class="col-lg-12 has-warning form-group">                  
-                    <label class="control-label" for="inputWithWarning">Temperatura</label>                                                 
+                    <label class="control-label" for="inputWithWarning">Contaminación Sonora</label> 
+                    <img src="/assets/images/sonido.png " width="40px">                                                
                     </div>
                 </td>
                 <td>
                     <div class="col-lg-12 has-warning form-group">                  
-                    <label class="control-label" for="inputWithWarning">Humedad</label>                                                 
+                    <label class="control-label" for="inputWithWarning">Temperatura</label>
+                    <img src="/assets/images/temperatura.png " width="40px">                                                
                     </div>
                 </td>
                 <td>
                     <div class="col-lg-12 has-warning form-group">                  
-                    <label class="control-label" for="inputWithWarning">Presion</label>                                                 
+                    <label class="control-label" for="inputWithWarning">Humedad</label>
+                    <img src="/assets/images/humedad2.png " width="40px">                                                 
                     </div>
                 </td>
                 <td>
                     <div class="col-lg-12 has-warning form-group">                  
-                    <label class="control-label" for="inputWithWarning">Nivel sonido</label>                                                 
+                    <label class="control-label" for="inputWithWarning">Presión Atmosférica</label>
+                    <img src="/assets/images/presion.png " width="40px">                                                 
                     </div>
                 </td>
                                     
-                </tr> 
+                </tr>
+                
+                
                 {%for medicion in mediciones%}
                 <tr align="left">
                 <td><div class="circle blue-bg"></div></td>
                 <td>{{medicion.fecha}}</td>
-                <td>{{medicion.temperatura}}</td>
-                <td>{{medicion.humedad}}</td>
-                <td>{{medicion.presion}}</td>
-                <td>{{medicion.nivel_sonido}}</td>                    
+                <td>{{medicion.nivel_sonido}} dBA</td>
+                <td>{{medicion.temperatura}} °C</td>
+                <td>{{medicion.humedad}} %</td>
+                <td>{{medicion.presion}} hPa</td>                    
                 </tr>  
                 {%endfor%}
 

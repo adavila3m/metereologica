@@ -16,7 +16,7 @@ def info(request):
 def dashboard(request, template_name= None):
 	#consultar sitios
 	sitios = sitio.objects.all()
-	titulo = "Sitios"
+	titulo = "NODOS"
 	
 	return render(	request,
 					"dashboard.html",
@@ -27,16 +27,18 @@ def dashboard(request, template_name= None):
 							
 	)
 
-def mediciones(request, template_name= None):
+def mediciones(request,id):
 	#consultar sitios
-	a = sitio.objects.get(id=1)
+	a = sitio.objects.get(id=id)
 	
 	mediciones = a.mediciones.all().order_by('-fecha')
 	
 	return render(	request,
 					"mediciones.html",
 					{	"mediciones":mediciones,
-	  					"titulo": "Mediciones",	  
+	  					"titulo": "LECTURA DE VARIABLES AMBIENTALES",
+						"nodo": a.nombre,
+						  	  
 					},
 							
 	)

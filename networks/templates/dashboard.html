@@ -21,9 +21,12 @@
                         <td>{{sitio.nombre}}</td>
                         <td>{{sitio.direccion}}</td>
                         <td>{{sitio.email}}</td>
-                        <td><a href="/mediciones" ><img src="/assets/images/medicion.png" width="30px"></a></td>                          
+                        <td><a href="/mediciones/{{sitio.id}}" ><img src="/assets/images/medicion.png" width="30px"></a></td>                          
                         </tr>
-                        
+                        {% empty %}
+                        <tr>
+                            <td>No existen registros</td>
+                        </tr>
                         {%endfor%}        
                     </tbody>
                     </table> 
