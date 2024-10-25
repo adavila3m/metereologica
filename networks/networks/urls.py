@@ -20,7 +20,7 @@ from autogestion.views import SensorDataView, MedicionDataView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.info),
+    path('', views.dashboard, {}),
     #path('inicio/', views.info),
     path('dashboard/', views.dashboard, {}),
     path('mediciones/<int:id>', views.mediciones),
