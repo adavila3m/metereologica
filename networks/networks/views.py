@@ -27,6 +27,7 @@ def dashboard(request, template_name= None):
 							
 	)
 
+
 def mediciones(request,id):
 	#consultar sitios
 	a = sitio.objects.get(id=id)
