@@ -4,6 +4,7 @@ from rest_framework import status
 
 from django.shortcuts import HttpResponse, render 
 from autogestion.models import sitio, medicion
+from django.core.paginator import Paginator
 
 def login(request):
 	""" Function doc """
@@ -23,6 +24,28 @@ def dashboard(request, template_name= None):
 					{	"sitios":sitios,
 	  					"titulo": titulo,  				
 
+					},
+							
+	)
+
+def mediciones2(request,id):
+	#consultar sitios
+	a = sitio.objects.get(id=id)
+	mediciones = a.mediciones.all().order_by('-fecha')
+
+	paginator = Paginator(mediciones, 10)  # 10 elementos por página
+
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
+
+	
+	return render(	request,
+					"mediciones2.html",
+					{	"page_obj": page_obj,
+						"mediciones":mediciones,
+	  					"titulo": "LECTURA DE VARIABLES AMBIENTALES (DOS)",
+						"nodo": a.nombre,
+						  	  
 					},
 							
 	)
