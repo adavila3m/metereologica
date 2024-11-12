@@ -44,7 +44,7 @@ def mediciones2(request,id):
 					"mediciones2.html",
 					{	"page_obj": page_obj,
 						"mediciones":mediciones,
-	  					"titulo": "LECTURA DE VARIABLES AMBIENTALES (DOS)",
+	  					"titulo": "LECTURA DE VARIABLES AMBIENTALES",
 						"nodo": a.nombre,
 						  	  
 					},
