@@ -28,6 +28,7 @@ def dashboard(request, template_name= None):
 							
 	)
 
+
 def mediciones2(request,id):
 	#consultar sitios
 	a = sitio.objects.get(id=id)
@@ -49,6 +50,7 @@ def mediciones2(request,id):
 					},
 							
 	)
+
 
 def mediciones(request,id):
 	#consultar sitios
@@ -85,5 +87,7 @@ def recibir_datos(request):
 		inst.mediciones.add(med)
 		inst.save()
 		
+
 		return Response({"message": "Dato recibido correctamente %s"%(inst.nombre,)}, status=status.HTTP_201_CREATED)
 	return Response({"error": "Dato no proporcionado"}, status=status.HTTP_400_BAD_REQUEST)
+
