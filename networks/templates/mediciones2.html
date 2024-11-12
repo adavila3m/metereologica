@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<a href="/dashboard"> <span class="badge">Volver</span> </a>
+<div class="templatemo-flex-row flex-content-row">
+    <div class="templatemo-content-widget white-bg col-2">
+        <i class="fa fa-times"></i>
+        <div class="media margin-bottom-30">
+            <div class="media-body">
+                <h2 class="media-heading blue-text"> Nodo: {{ nodo }} (34&deg37'03"S - 58&deg23'31"W)</h2>
+                <p>Mediciones</p>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr align="left">
+                        <td><div></div></td>
+                        <td><div class="col-lg-12 has-warning form-group"><label class="control-label" for="inputWithWarning">Fecha</label></div></td>
+                        <td><div class="col-lg-12 has-warning form-group"><label class="control-label" for="inputWithWarning">Contaminación Sonora</label><img src="/assets/images/sonido.png" width="40px"></div></td>
+                        <td><div class="col-lg-12 has-warning form-group"><label class="control-label" for="inputWithWarning">Temperatura</label><img src="/assets/images/temperatura.png" width="40px"></div></td>
+                        <td><div class="col-lg-12 has-warning form-group"><label class="control-label" for="inputWithWarning">Humedad</label><img src="/assets/images/humedad2.png" width="40px"></div></td>
+                        <td><div class="col-lg-12 has-warning form-group"><label class="control-label" for="inputWithWarning">Presión Atmosférica</label><img src="/assets/images/presion.png" width="40px"></div></td>
+                    </tr>
+                    
+                    {% for medicion in page_obj %}
+                    <tr align="left">
+                        <td><div class="circle blue-bg"></div></td>
+                        <td>{{ medicion.fecha }}</td>
+                        <td>{{ medicion.nivel_sonido }} dBA</td>
+                        <td>{{ medicion.temperatura }} °C</td>
+                        <td>{{ medicion.humedad }} %</td>
+                        <td>{{ medicion.presion }} hPa</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Paginación -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; Primera</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                {% endif %}
+
+                <span class="current">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+{% endblock %}
